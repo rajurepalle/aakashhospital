@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>Aakash Hospitals — Super Specialty Care, Kurnool</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <!-- Fallback if Clash Display unavailable -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ══ THEME TOGGLE ══ -->
+<button class="theme-btn" id="themeToggle" aria-label="Toggle theme">
+  <span class="t-icon" id="themeIcon">☀︎</span>
+</button>
+
+<!-- ══ NAVBAR ══ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-cross">
+        <div class="lc-h"></div><div class="lc-v"></div>
+      </div>
+      <div class="logo-words">
+        <span class="lw-main">Aakash</span>
+        <span class="lw-sub">Hospitals</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#departments">Specialities</a></li>
+      <li><a href="#doctors">Doctors</a></li>
+      <li><a href="#facilities">Facilities</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="tel:08518000000" class="nav-cta">
+      <span class="cta-dot"></span>Emergency
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#departments">Specialities</a>
+    <a href="#doctors">Doctors</a>
+    <a href="#facilities">Facilities</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:08518000000" class="mm-emergency">📞 Emergency Helpline</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="hb-blob b1"></div>
+    <div class="hb-blob b2"></div>
+    <div class="hb-blob b3"></div>
+    <div class="hb-lines"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-chip reveal">
+      <span class="chip-pulse"></span>
+      <span>Kurnool &nbsp;·&nbsp; Andhra Pradesh</span>
+    </div>
+    <h1 class="hero-h1 reveal">
+      Advanced Care<br/>
+      <em class="hero-em">For Every Life</em>
+    </h1>
+    <p class="hero-p reveal">Super-specialty medicine delivered with precision technology and a human touch — 24 hours, every day.</p>
+    <div class="hero-btns reveal">
+      <a href="tel:08518000000" class="hbtn-primary">Book Appointment</a>
+      <a href="#departments" class="hbtn-outline">Our Specialities ↓</a>
+    </div>
+    <div class="hero-stats reveal">
+      <div class="hs-item"><span class="hs-num" data-target="20">0</span><span class="hs-sym">+</span><span class="hs-lbl">Specialities</span></div>
+      <div class="hs-sep"></div>
+      <div class="hs-item"><span class="hs-num" data-target="18">0</span><span class="hs-sym">+</span><span class="hs-lbl">Doctors</span></div>
+      <div class="hs-sep"></div>
+      <div class="hs-item"><span class="hs-num decimal" data-target="4.8">0</span><span class="hs-sym">★</span><span class="hs-lbl">Google Rating</span></div>
+      <div class="hs-sep"></div>
+      <div class="hs-item"><span class="hs-num" data-target="15000">0</span><span class="hs-sym">+</span><span class="hs-lbl">Patients</span></div>
+    </div>
+  </div>
+  <div class="hero-card reveal">
+    <div class="hc-badge"><span class="hc-dot"></span>Live — All Systems Active</div>
+    <div class="hc-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3872.5!2d78.036!3d15.812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5dd001daed17f%3A0x27ae425ca2a1806f!2sAakash%20Hospitals!5e0!3m2!1sen!2sin!4v1700000000000"
+        title="Aakash Hospitals Location"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <div class="hc-services">
+      <div class="hcs-item"><span class="hcs-icon">🚨</span><span>Emergency 24/7</span></div>
+      <div class="hcs-item"><span class="hcs-icon">🚑</span><span>Ambulance</span></div>
+      <div class="hcs-item"><span class="hcs-icon">🔬</span><span>Labs Open</span></div>
+      <div class="hcs-item"><span class="hcs-icon">💊</span><span>Pharmacy</span></div>
+    </div>
+    <a href="tel:08518000000" class="hc-call">Call Emergency Now</a>
+  </div>
+  <div class="scroll-hint"><div class="sh-line"></div><span>scroll</span></div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section class="about section-gap" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="eyebrow reveal">About Aakash Hospitals</div>
+        <h2 class="sec-title reveal">Healing Excellence<br/><span class="accent-text">Rooted in Kurnool</span></h2>
+        <p class="body-p reveal">Aakash Hospitals stands as Kurnool's premier super-specialty destination, combining world-class infrastructure with deeply compassionate care. Led by Dr. P. Srihari and a team of distinguished specialists, we serve our community with 20+ medical departments and state-of-the-art technology.</p>
+        <p class="body-p reveal">From advanced neuro surgery to comprehensive gynaecology, our multidisciplinary team ensures every patient receives the most precise, personalised treatment available in Andhra Pradesh.</p>
+        <div class="about-badges reveal">
+          <span class="badge">⭐ 4.8 Google Rating</span>
+          <span class="badge">🆓 Free OP Sundays</span>
+          <span class="badge">💳 Cashless Insurance</span>
+          <span class="badge">🚑 24/7 Ambulance</span>
+          <span class="badge">🏥 20+ Specialities</span>
+        </div>
+      </div>
+      <div class="about-visual reveal">
+        <div class="av-frame">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3872.5!2d78.036!3d15.812!2m3!1f60!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5dd001daed17f%3A0x27ae425ca2a1806f!2sAakash%20Hospitals!5e1!3m2!1sen!2sin!4v1700000000000"
+            title="Aakash Hospitals Aerial View"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <div class="av-label">
+            <span class="av-dot"></span>
+            <span>Aakash Hospitals, Kurnool</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DEPARTMENTS ══ -->
+<section class="departments section-gap" id="departments">
+  <div class="container">
+    <div class="sec-header">
+      <div class="eyebrow reveal">Centres of Excellence</div>
+      <h2 class="sec-title reveal">Our <span class="accent-text">Specialities</span></h2>
+      <p class="sec-desc reveal">20+ medical departments equipped with cutting-edge technology and led by Andhra Pradesh's finest specialists.</p>
+    </div>
+    <div class="dept-grid">
+      <div class="dept-card reveal"><div class="dc-icon">🧠</div><h3>Neuro Surgery</h3><p>Brain, spine & complex neurological procedures.</p></div>
+      <div class="dept-card reveal"><div class="dc-icon">🫀</div><h3>Cardiology</h3><p>Interventional cardiac care & heart surgery.</p></div>
+      <div class="dept-card reveal"><div class="dc-icon">🦴</div><h3>Orthopaedics</h3><p>Joint replacement, trauma & sports medicine.</p></div>
+      <div class="dept-card reveal"><div class="dc-icon">🤰</div><h3>Gynaecology</h3><p>Obstetrics, GYN & high-risk pregnancy care.</p></div>
+      <div class="dept-card reveal"><div class="dc-icon">🧒</div><h3>Paediatrics</h3><p>Child health, NICU & paediatric surgery.</p></div>
+      <div class="dept-card reveal"><div class="dc-icon">🫁</div><h3>ICU & Critical Care</h3><p>Advanced intensive care, 24/7 monitoring.</p></div>
+      <div class="dept-card reveal"><div class="dc-icon">🩺</div><h3>General Surgery</h3><p>Laparoscopic & open surgical procedures.</p></div>
+      <div class="dept-card reveal"><div class="dc-icon">🫘</div><h3>Nephrology</h3><p>Kidney diseases, dialysis & transplant care.</p></div>
+      <div class="dept-card reveal"><div class="dc-icon">🔪</div><h3>Surgical Oncology</h3><p>Cancer surgery & oncological interventions.</p></div>
+      <div class="dept-card reveal"><div class="dc-icon">👁️</div><h3>ENT</h3><p>Ear, nose, throat & head-neck surgery.</p></div>
+      <div class="dept-card reveal"><div class="dc-icon">🖐️</div><h3>Plastic Surgery</h3><p>Reconstructive & cosmetic procedures.</p></div>
+      <div class="dept-card reveal"><div class="dc-icon">🩻</div><h3>Radiology</h3><p>Digital X-ray, CT, MRI diagnostics.</p></div>
+      <div class="dept-card reveal"><div class="dc-icon">🧴</div><h3>Dermatology</h3><p>Skin, hair & cosmetic dermatology.</p></div>
+      <div class="dept-card reveal"><div class="dc-icon">💉</div><h3>Urology</h3><p>Urinary tract, prostate & renal surgery.</p></div>
+      <div class="dept-card reveal"><div class="dc-icon">💊</div><h3>General Medicine</h3><p>Internal medicine, diabetes & primary care.</p></div>
+      <div class="dept-card reveal"><div class="dc-icon">👦</div><h3>Paediatric Surgery</h3><p>Complex surgical care for children.</p></div>
+      <div class="dept-card reveal"><div class="dc-icon">🧬</div><h3>Neurology</h3><p>Neurological disorders & brain mapping.</p></div>
+      <div class="dept-card reveal"><div class="dc-icon">🩹</div><h3>Pain Management</h3><p>Chronic pain & palliative therapy.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DOCTORS ══ -->
+<section class="doctors section-gap" id="doctors">
+  <div class="container">
+    <div class="sec-header">
+      <div class="eyebrow reveal">Our Medical Team</div>
+      <h2 class="sec-title reveal">Meet the <span class="accent-text">Specialists</span></h2>
+      <p class="sec-desc reveal">Highly trained physicians and surgeons dedicated to delivering world-class healthcare to every patient.</p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="filter-bar reveal">
+      <button class="fb active" data-filter="all">All Doctors</button>
+      <button class="fb" data-filter="surgery">Surgery</button>
+      <button class="fb" data-filter="medicine">Medicine</button>
+      <button class="fb" data-filter="women">Women's Health</button>
+      <button class="fb" data-filter="neuro">Neuro</button>
+      <button class="fb" data-filter="paeds">Paediatrics</button>
+    </div>
+
+    <div class="doctors-grid" id="doctorsGrid">
+
+      <!-- Managing Director -->
+      <div class="doc-card reveal" data-cat="medicine all">
+        <div class="dc-avatar">
+          <div class="dc-initials">PS</div>
+          <div class="dc-dept-tag">Managing Director</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. P. Srihari</h3>
+          <p class="dc-qual">MBBS, PGDFM, F.Diab</p>
+          <p class="dc-spec">General Physician & Diabetologist</p>
+          <div class="dc-tags"><span>Diabetes</span><span>General Medicine</span></div>
+        </div>
+      </div>
+
+      <!-- Urology -->
+      <div class="doc-card reveal" data-cat="surgery all">
+        <div class="dc-avatar" style="--dc-color:#4f8ef7">
+          <div class="dc-initials">PM</div>
+          <div class="dc-dept-tag">Urology</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. P. Muthya Sree</h3>
+          <p class="dc-qual">MBBS, MS, DGO, Mch</p>
+          <p class="dc-spec">Urologist & Surgeon</p>
+          <div class="dc-tags"><span>Urology</span><span>Surgery</span></div>
+        </div>
+      </div>
+
+      <!-- General Surgery -->
+      <div class="doc-card reveal" data-cat="surgery all">
+        <div class="dc-avatar" style="--dc-color:#e05b4b">
+          <div class="dc-initials">KR</div>
+          <div class="dc-dept-tag">General Surgery</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. K. Rama Chandra</h3>
+          <p class="dc-qual">MS (Gen Surgery)</p>
+          <p class="dc-spec">General & Laparoscopic Surgeon</p>
+          <div class="dc-tags"><span>General Surgery</span><span>Laparoscopy</span></div>
+        </div>
+      </div>
+
+      <!-- ENT -->
+      <div class="doc-card reveal" data-cat="surgery all">
+        <div class="dc-avatar" style="--dc-color:#2eb88a">
+          <div class="dc-initials">GK</div>
+          <div class="dc-dept-tag">ENT</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. G. Keerthi Kalyan</h3>
+          <p class="dc-qual">MBBS, MS (ENT)</p>
+          <p class="dc-spec">ENT Specialist & Head-Neck Surgeon</p>
+          <div class="dc-tags"><span>ENT</span><span>Head & Neck</span></div>
+        </div>
+      </div>
+
+      <!-- Radiology -->
+      <div class="doc-card reveal" data-cat="medicine all">
+        <div class="dc-avatar" style="--dc-color:#9b59d6">
+          <div class="dc-initials">DR</div>
+          <div class="dc-dept-tag">Radiology</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. Ravi</h3>
+          <p class="dc-qual">MBBS, MD RD</p>
+          <p class="dc-spec">Radiologist & Imaging Specialist</p>
+          <div class="dc-tags"><span>Radiology</span><span>MRI/CT</span></div>
+        </div>
+      </div>
+
+      <!-- General Medicine -->
+      <div class="doc-card reveal" data-cat="medicine all">
+        <div class="dc-avatar" style="--dc-color:#f5a623">
+          <div class="dc-initials">MY</div>
+          <div class="dc-dept-tag">General Medicine</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. Mythri</h3>
+          <p class="dc-qual">MBBS, MD</p>
+          <p class="dc-spec">General Physician</p>
+          <div class="dc-tags"><span>General Medicine</span><span>Internal Medicine</span></div>
+        </div>
+      </div>
+
+      <!-- Paediatrics -->
+      <div class="doc-card reveal" data-cat="paeds all">
+        <div class="dc-avatar" style="--dc-color:#f06292">
+          <div class="dc-initials">MH</div>
+          <div class="dc-dept-tag">Paediatrics</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. Mahendranath</h3>
+          <p class="dc-qual">MD (Paediatrics)</p>
+          <p class="dc-spec">Paediatric Specialist</p>
+          <div class="dc-tags"><span>Paediatrics</span><span>Child Care</span></div>
+        </div>
+      </div>
+
+      <!-- Paediatrics 2 -->
+      <div class="doc-card reveal" data-cat="paeds all">
+        <div class="dc-avatar" style="--dc-color:#26a69a">
+          <div class="dc-initials">GE</div>
+          <div class="dc-dept-tag">Paediatrics</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. G. Eswar</h3>
+          <p class="dc-qual">MBBS, MD (Paed)</p>
+          <p class="dc-spec">Paediatric Physician</p>
+          <div class="dc-tags"><span>Paediatrics</span><span>Neonatology</span></div>
+        </div>
+      </div>
+
+      <!-- Ortho -->
+      <div class="doc-card reveal" data-cat="surgery all">
+        <div class="dc-avatar" style="--dc-color:#5c6bc0">
+          <div class="dc-initials">DRK</div>
+          <div class="dc-dept-tag">Orthopaedics</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. D. Ravi Kumar</h3>
+          <p class="dc-qual">MBBS, DNB (Ortho)</p>
+          <p class="dc-spec">Orthopaedic Surgeon</p>
+          <div class="dc-tags"><span>Ortho</span><span>Joint Replacement</span></div>
+        </div>
+      </div>
+
+      <!-- Gynaecology 1 -->
+      <div class="doc-card reveal" data-cat="women all">
+        <div class="dc-avatar" style="--dc-color:#ec407a">
+          <div class="dc-initials">KS</div>
+          <div class="dc-dept-tag">Gynaecology</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. K. Sushmitha</h3>
+          <p class="dc-qual">MS (GYN & OBS)</p>
+          <p class="dc-spec">Obstetrician & Gynaecologist</p>
+          <div class="dc-tags"><span>Gynaecology</span><span>Obstetrics</span></div>
+        </div>
+      </div>
+
+      <!-- Gynaecology 2 -->
+      <div class="doc-card reveal" data-cat="women all">
+        <div class="dc-avatar" style="--dc-color:#ab47bc">
+          <div class="dc-initials">EAJ</div>
+          <div class="dc-dept-tag">Gynaecology</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. E. Asha Jyothi</h3>
+          <p class="dc-qual">MBBS, MS (Gynaecology)</p>
+          <p class="dc-spec">Gynaecologist & Laparoscopic Surgeon</p>
+          <div class="dc-tags"><span>Gynaecology</span><span>Laparoscopy</span></div>
+        </div>
+      </div>
+
+      <!-- Plastic Surgery 1 -->
+      <div class="doc-card reveal" data-cat="surgery all">
+        <div class="dc-avatar" style="--dc-color:#ff7043">
+          <div class="dc-initials">MCR</div>
+          <div class="dc-dept-tag">Plastic Surgery</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. M. Chaitanya Kumar Reddy</h3>
+          <p class="dc-qual">MBBS, MS, Mch</p>
+          <p class="dc-spec">Plastic & Reconstructive Surgeon</p>
+          <div class="dc-tags"><span>Plastic Surgery</span><span>Reconstructive</span></div>
+        </div>
+      </div>
+
+      <!-- Plastic Surgery 2 -->
+      <div class="doc-card reveal" data-cat="surgery all">
+        <div class="dc-avatar" style="--dc-color:#e91e8c">
+          <div class="dc-initials">LP</div>
+          <div class="dc-dept-tag">Plastic Surgery</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. L. Parvathi</h3>
+          <p class="dc-qual">MBBS, MS, Mch</p>
+          <p class="dc-spec">Plastic Surgeon</p>
+          <div class="dc-tags"><span>Plastic Surgery</span><span>Cosmetic</span></div>
+        </div>
+      </div>
+
+      <!-- Cardiology -->
+      <div class="doc-card reveal" data-cat="medicine all">
+        <div class="dc-avatar" style="--dc-color:#ef5350">
+          <div class="dc-initials">PP</div>
+          <div class="dc-dept-tag">Cardiology</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. Peter Praveen</h3>
+          <p class="dc-qual">MBBS, MD (Chest), DNB (Cardiology)</p>
+          <p class="dc-spec">Interventional Cardiologist</p>
+          <div class="dc-tags"><span>Cardiology</span><span>Interventional</span></div>
+        </div>
+      </div>
+
+      <!-- Neuro Surgery -->
+      <div class="doc-card reveal" data-cat="neuro surgery all">
+        <div class="dc-avatar" style="--dc-color:#42a5f5">
+          <div class="dc-initials">GRB</div>
+          <div class="dc-dept-tag">Neuro Surgery</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. G. Ram Balaji Naik</h3>
+          <p class="dc-qual">MBBS, MS, Mch (Neurosurgery)</p>
+          <p class="dc-spec">Neurosurgeon</p>
+          <div class="dc-tags"><span>Neuro Surgery</span><span>Brain & Spine</span></div>
+        </div>
+      </div>
+
+      <!-- ICU & Critical Care -->
+      <div class="doc-card reveal" data-cat="medicine all">
+        <div class="dc-avatar" style="--dc-color:#26c6da">
+          <div class="dc-initials">GSM</div>
+          <div class="dc-dept-tag">ICU & Critical Care</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. G.D. Sree Mounika</h3>
+          <p class="dc-qual">MBBS, MD (Anaesthesia)</p>
+          <p class="dc-spec">Critical Care & Anaesthesiologist</p>
+          <div class="dc-tags"><span>ICU</span><span>Critical Care</span></div>
+        </div>
+      </div>
+
+      <!-- Nephrology -->
+      <div class="doc-card reveal" data-cat="medicine all">
+        <div class="dc-avatar" style="--dc-color:#7e57c2">
+          <div class="dc-initials">MSS</div>
+          <div class="dc-dept-tag">Nephrology</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. M. Sreedhar Sharma</h3>
+          <p class="dc-qual">MBBS, MD, DM (Nephro)</p>
+          <p class="dc-spec">Nephrologist</p>
+          <div class="dc-tags"><span>Nephrology</span><span>Dialysis</span></div>
+        </div>
+      </div>
+
+      <!-- Surgical Oncology -->
+      <div class="doc-card reveal" data-cat="surgery all">
+        <div class="dc-avatar" style="--dc-color:#66bb6a">
+          <div class="dc-initials">GB</div>
+          <div class="dc-dept-tag">Surgical Oncology</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. G. Beesanna</h3>
+          <p class="dc-qual">MBBS, MS, Mch</p>
+          <p class="dc-spec">Surgical Oncologist</p>
+          <div class="dc-tags"><span>Oncology</span><span>Cancer Surgery</span></div>
+        </div>
+      </div>
+
+      <!-- Paediatric Surgery -->
+      <div class="doc-card reveal" data-cat="paeds surgery all">
+        <div class="dc-avatar" style="--dc-color:#ffa726">
+          <div class="dc-initials">KN</div>
+          <div class="dc-dept-tag">Paediatric Surgery</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. Krishna Naik</h3>
+          <p class="dc-qual">MS, Mch</p>
+          <p class="dc-spec">Paediatric Surgeon</p>
+          <div class="dc-tags"><span>Paediatric Surgery</span><span>Neonatal</span></div>
+        </div>
+      </div>
+
+      <!-- Dermatology -->
+      <div class="doc-card reveal" data-cat="medicine all">
+        <div class="dc-avatar" style="--dc-color:#ef9a9a">
+          <div class="dc-initials">BJL</div>
+          <div class="dc-dept-tag">Dermatology</div>
+        </div>
+        <div class="dc-info">
+          <h3>Dr. B. Jaya Lakshmi</h3>
+          <p class="dc-qual">MD, DVL</p>
+          <p class="dc-spec">Dermatologist & Cosmetologist</p>
+          <div class="dc-tags"><span>Dermatology</span><span>Cosmetic</span></div>
+        </div>
+      </div>
+
+    </div><!-- /doctors-grid -->
+  </div>
+</section>
+
+<!-- ══ FACILITIES ══ -->
+<section class="facilities section-gap" id="facilities">
+  <div class="container">
+    <div class="sec-header">
+      <div class="eyebrow reveal">Infrastructure</div>
+      <h2 class="sec-title reveal">World-Class <span class="accent-text">Facilities</span></h2>
+      <p class="sec-desc reveal">State-of-the-art infrastructure designed around patient safety, comfort and clinical excellence.</p>
+    </div>
+    <div class="fac-grid">
+      <div class="fac-card reveal">
+        <div class="fac-icon">🚨</div>
+        <h3>24/7 Emergency</h3>
+        <p>Round-the-clock emergency care with dedicated trauma bay and rapid response teams.</p>
+      </div>
+      <div class="fac-card reveal">
+        <div class="fac-icon">🔬</div>
+        <h3>Advanced Laboratory</h3>
+        <p>Automated diagnostics with fast-track results for critical cases within 60 minutes.</p>
+      </div>
+      <div class="fac-card reveal">
+        <div class="fac-icon">🚑</div>
+        <h3>Ambulance Services</h3>
+        <p>GPS-tracked, fully equipped ambulances with paramedic support available 24/7.</p>
+      </div>
+      <div class="fac-card reveal">
+        <div class="fac-icon">💊</div>
+        <h3>In-House Pharmacy</h3>
+        <p>Comprehensive pharmacy stocked with all essential medications, open round the clock.</p>
+      </div>
+      <div class="fac-card reveal">
+        <div class="fac-icon">🩻</div>
+        <h3>Digital Radiology</h3>
+        <p>High-resolution digital X-Ray, CT scan and MRI for precise, rapid diagnosis.</p>
+      </div>
+      <div class="fac-card reveal">
+        <div class="fac-icon">🏥</div>
+        <h3>Modern OT Complex</h3>
+        <p>Laminar-flow operation theatres equipped for complex surgical procedures.</p>
+      </div>
+      <div class="fac-card reveal">
+        <div class="fac-icon">🛏️</div>
+        <h3>Patient Rooms</h3>
+        <p>Comfortable private and semi-private rooms with dedicated nursing care and attendant facilities.</p>
+      </div>
+      <div class="fac-card reveal">
+        <div class="fac-icon">👶</div>
+        <h3>NICU / PICU</h3>
+        <p>Dedicated neonatal and paediatric intensive care units with specialist round-the-clock monitoring.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ GALLERY ══ -->
+<section class="gallery section-gap" id="gallery">
+  <div class="container">
+    <div class="sec-header">
+      <div class="eyebrow reveal">Inside Aakash</div>
+      <h2 class="sec-title reveal">Our <span class="accent-text">Hospital</span></h2>
+      <p class="sec-desc reveal">A glimpse into our world-class facilities and caring environment.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gal-item reveal large">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3872.5!2d78.036!3d15.812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5dd001daed17f%3A0x27ae425ca2a1806f!2sAakash%20Hospitals!5e0!3m2!1sen!2sin!4v1700000000001"
+          title="Aakash Hospitals Street View"
+          loading="lazy"
+          allowfullscreen></iframe>
+        <div class="gal-label">Aakash Hospitals — Kurnool</div>
+      </div>
+      <div class="gal-item reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3872.5!2d78.036!3d15.812!2m3!1f90!2f35!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5dd001daed17f%3A0x27ae425ca2a1806f!2sAakash%20Hospitals!5e1!3m2!1sen!2sin!4v1700000000002"
+          title="Aakash Hospitals Satellite"
+          loading="lazy"
+          allowfullscreen></iframe>
+        <div class="gal-label">Location Overview</div>
+      </div>
+      <div class="gal-item reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3872.5!2d78.036!3d15.812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5dd001daed17f%3A0x27ae425ca2a1806f!2sAakash%20Hospitals!5e0!3m2!1sen!2sin!4v1700000000003"
+          title="Aakash Hospitals Nearby"
+          loading="lazy"
+          allowfullscreen></iframe>
+        <div class="gal-label">Nearby Landmarks</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INSURANCE ══ -->
+<section class="insurance section-gap">
+  <div class="container">
+    <div class="sec-header">
+      <div class="eyebrow reveal">Cashless Partners</div>
+      <h2 class="sec-title reveal">Insurance <span class="accent-text">Partners</span></h2>
+    </div>
+    <div class="ticker-wrap reveal">
+      <div class="ticker-track">
+        <span>Aditya Birla Health</span><span>Bajaj Allianz</span><span>Care Health</span>
+        <span>CIGNA TTK</span><span>Ericson TPA</span><span>FHPL</span><span>Future Generali</span>
+        <span>GHPL</span><span>Health India</span><span>ICICI Lombard</span>
+        <span>IFFCO Tokio</span><span>Niva Bupa</span><span>Star Health</span><span>HDFC Ergo</span>
+        <!-- duplicate for seamless loop -->
+        <span>Aditya Birla Health</span><span>Bajaj Allianz</span><span>Care Health</span>
+        <span>CIGNA TTK</span><span>Ericson TPA</span><span>FHPL</span><span>Future Generali</span>
+        <span>GHPL</span><span>Health India</span><span>ICICI Lombard</span>
+        <span>IFFCO Tokio</span><span>Niva Bupa</span><span>Star Health</span><span>HDFC Ergo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section class="contact section-gap" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="eyebrow reveal">Reach Us</div>
+        <h2 class="sec-title reveal">Contact <span class="accent-text">Aakash</span></h2>
+        <div class="ci-list reveal">
+          <div class="ci-row">
+            <div class="ci-icon">📍</div>
+            <div>
+              <strong>Address</strong>
+              <p>Aakash Hospitals, Kurnool,<br/>Andhra Pradesh — 518001</p>
+            </div>
+          </div>
+          <div class="ci-row">
+            <div class="ci-icon">🚨</div>
+            <div>
+              <strong>Emergency (24/7)</strong>
+              <p><a href="tel:08518000000">085180 00000</a></p>
+            </div>
+          </div>
+          <div class="ci-row">
+            <div class="ci-icon">📞</div>
+            <div>
+              <strong>Appointments</strong>
+              <p><a href="tel:08518111111">085181 11111</a></p>
+            </div>
+          </div>
+          <div class="ci-row">
+            <div class="ci-icon">🆓</div>
+            <div>
+              <strong>Free OPD</strong>
+              <p>Every Sunday — Walk-in, no appointment needed</p>
+            </div>
+          </div>
+          <div class="ci-row">
+            <div class="ci-icon">🕐</div>
+            <div>
+              <strong>OPD Timings</strong>
+              <p>Mon–Sat: 9 AM – 7 PM<br/>Emergency: 24 Hours</p>
+            </div>
+          </div>
+        </div>
+        <div class="social-row reveal">
+          <a href="#" class="soc-btn">Facebook</a>
+          <a href="#" class="soc-btn">Instagram</a>
+          <a href="#" class="soc-btn">YouTube</a>
+        </div>
+      </div>
+      <div class="contact-map reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3872.5!2d78.036!3d15.812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5dd001daed17f%3A0x27ae425ca2a1806f!2sAakash%20Hospitals!5e0!3m2!1sen!2sin!4v1700000000004"
+          title="Aakash Hospitals Map"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <a href="https://www.google.com/maps/place/Aakash+Hospitals/@15.810346,78.0383234,16z" target="_blank" class="map-open-btn">Open in Google Maps →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-cross sm">
+            <div class="lc-h"></div><div class="lc-v"></div>
+          </div>
+          <div class="logo-words">
+            <span class="lw-main">Aakash</span>
+            <span class="lw-sub">Hospitals</span>
+          </div>
+        </div>
+        <p>Kurnool's premier super-specialty hospital delivering world-class healthcare with compassion. Available 24/7 for emergencies.</p>
+        <div class="footer-emergency-box">
+          <span class="feb-dot"></span>
+          <span>Emergency: </span>
+          <a href="tel:08518000000">085180 00000</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Specialities</h4>
+        <ul>
+          <li>Neuro Surgery</li><li>Cardiology</li><li>Orthopaedics</li>
+          <li>Gynaecology</li><li>Paediatrics</li><li>ICU & Critical Care</li>
+          <li>Nephrology</li><li>Surgical Oncology</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>More Depts</h4>
+        <ul>
+          <li>General Surgery</li><li>ENT</li><li>Plastic Surgery</li>
+          <li>Urology</li><li>Radiology</li><li>Dermatology</li>
+          <li>General Medicine</li><li>Paediatric Surgery</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#doctors">Our Doctors</a></li>
+          <li><a href="#facilities">Facilities</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Aakash Hospitals, Kurnool, Andhra Pradesh. All Rights Reserved.</p>
+      <p>Designed with ❤ for Patient Care</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
