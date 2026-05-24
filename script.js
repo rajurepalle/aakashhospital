@@ -238,6 +238,57 @@
   const filterBtns = document.querySelectorAll('.fb');
   const docCards = document.querySelectorAll('.doc-card');
   
+  const isTouchCardMode = window.matchMedia('(max-width: 768px)').matches;
+  
+  function setDoctorCardState(card, expanded) {
+    card.classList.toggle('is-expanded', expanded);
+    card.classList.toggle('is-collapsed', !expanded);
+    card.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+  }
+  
+  function collapseAllDoctorCards() {
+    docCards.forEach(card => setDoctorCardState(card, false));
+  }
+  
+  function initDoctorCardAccordion() {
+    if (!isTouchCardMode) return;
+
+    document.body.classList.add('touch-device');
+    docCards.forEach(card => {
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-expanded', 'false');
+      card.classList.add('is-collapsed');
+
+      const toggleCard = () => {
+        const shouldExpand = !card.classList.contains('is-expanded');
+        collapseAllDoctorCards();
+        setDoctorCardState(card, shouldExpand);
+      };
+
+      card.addEventListener('click', (e) => {
+        if (!document.body.classList.contains('touch-device')) return;
+        if (e.target.closest('.dc-tags a')) return;
+        toggleCard();
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (!document.body.classList.contains('touch-device')) return;
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleCard();
+        }
+      });
+    });
+
+    // Keep the first card expanded so the section starts readable, while still compact.
+    if (docCards.length) {
+      setDoctorCardState(docCards[0], true);
+    }
+  }
+  
+  initDoctorCardAccordion();
+  
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       // Update active button
@@ -260,12 +311,27 @@
         } else {
           card.classList.add('hidden');
         }
+        
+        if (isTouchCardMode) {
+          setDoctorCardState(card, false);
+        }
       });
       
       // Haptic feedback on mobile
       if (navigator.vibrate) {
         navigator.vibrate(10);
       }
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.matchMedia('(max-width: 768px)').matches) return;
+    document.body.classList.remove('touch-device');
+    docCards.forEach(card => {
+      card.removeAttribute('role');
+      card.removeAttribute('tabindex');
+      card.removeAttribute('aria-expanded');
+      card.classList.remove('is-expanded', 'is-collapsed');
     });
   });
 
