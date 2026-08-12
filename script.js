@@ -21,8 +21,8 @@
   const themeIcon = document.getElementById('themeIcon');
   const html = document.documentElement;
   
-  // Get saved theme or default to dark
-  const savedTheme = localStorage.getItem('aakash-theme') || 'dark';
+  // Get saved theme or default to light (corporate)
+  const savedTheme = localStorage.getItem('aakash-theme') || 'light';
   html.setAttribute('data-theme', savedTheme);
   updateThemeIcon(savedTheme);
   
@@ -335,149 +335,9 @@
     });
   });
 
-  // ══ GALLERY LIGHTBOX (MOBILE-OPTIMIZED) ══
-  document.querySelectorAll('.gal-item').forEach(item => {
-    item.addEventListener('click', function(e) {
-      // Don't trigger if clicking on iframe
-      if (e.target.tagName === 'IFRAME') return;
-      
-      const iframe = this.querySelector('iframe');
-      const label = this.querySelector('.gal-label');
-      
-      if (!iframe) return;
-      
-      // Create overlay
-      const overlay = document.createElement('div');
-      overlay.style.cssText = `
-        position: fixed;
-        inset: 0;
-        z-index: 99999;
-        background: rgba(0, 0, 0, 0.95);
-        backdrop-filter: blur(20px);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        animation: fadeIn 0.2s ease;
-        cursor: zoom-out;
-        overflow-y: auto;
-      `;
-      
-      // Add fade-in animation
-      const style = document.createElement('style');
-      style.textContent = '@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }';
-      document.head.appendChild(style);
-      
-      // Clone iframe for fullscreen
-      const fullIframe = iframe.cloneNode(true);
-      fullIframe.style.cssText = `
-        width: min(90vw, 1200px);
-        height: min(70vh, 800px);
-        border-radius: 16px;
-        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
-        margin-bottom: 16px;
-      `;
-      
-      // Caption
-      const caption = document.createElement('div');
-      caption.textContent = label ? label.textContent : '';
-      caption.style.cssText = `
-        font-size: 15px;
-        color: rgba(255, 255, 255, 0.7);
-        text-align: center;
-        font-family: inherit;
-      `;
-      
-      // Close button
-      const closeBtn = document.createElement('button');
-      closeBtn.textContent = '✕';
-      closeBtn.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        width: 44px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        font-size: 18px;
-        color: #fff;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        z-index: 100000;
-      `;
-      
-      closeBtn.addEventListener('mouseenter', () => {
-        closeBtn.style.background = 'rgba(255, 255, 255, 0.2)';
-        closeBtn.style.transform = 'scale(1.1)';
-      });
-      
-      closeBtn.addEventListener('mouseleave', () => {
-        closeBtn.style.background = 'rgba(255, 255, 255, 0.1)';
-        closeBtn.style.transform = 'scale(1)';
-      });
-      
-      overlay.appendChild(fullIframe);
-      overlay.appendChild(caption);
-      overlay.appendChild(closeBtn);
-      document.body.appendChild(overlay);
-      document.body.style.overflow = 'hidden';
-      
-      // Close handlers
-      const closeOverlay = () => {
-        if (document.body.contains(overlay)) {
-          overlay.style.opacity = '0';
-          setTimeout(() => {
-            document.body.removeChild(overlay);
-          }, 200);
-        }
-        document.body.style.overflow = '';
-        document.removeEventListener('keydown', keyHandler);
-      };
-      
-      const keyHandler = (e) => {
-        if (e.key === 'Escape') closeOverlay();
-      };
-      
-      overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) closeOverlay();
-      });
-      
-      closeBtn.addEventListener('click', closeOverlay);
-      document.addEventListener('keydown', keyHandler);
-      
-      // Haptic feedback on mobile
-      if (navigator.vibrate) {
-        navigator.vibrate(10);
-      }
-    });
-  });
-
-  // ══ PERFORMANCE: LAZY LOAD IFRAMES ══
-  const lazyIframes = document.querySelectorAll('iframe[loading="lazy"]');
-  
-  if ('IntersectionObserver' in window) {
-    const iframeObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const iframe = entry.target;
-          if (iframe.dataset.src) {
-            iframe.src = iframe.dataset.src;
-            iframe.removeAttribute('data-src');
-          }
-          iframeObserver.unobserve(iframe);
-        }
-      });
-    }, {
-      rootMargin: '50px'
-    });
-    
-    lazyIframes.forEach(iframe => iframeObserver.observe(iframe));
-  }
+  // ══ MAP IMAGE CLICKS ══
+  // Gallery items now use <a> tags to open Google Maps directly
+  // No lightbox needed - links open in new tab
 
   // ══ TOUCH OPTIMIZATION FOR MOBILE ══
   if (isMobile) {
@@ -491,11 +351,11 @@
   // ══ CONSOLE BRANDING ══
   console.log(
     '%c🏥 Aakash Hospitals',
-    'color: #4a90ff; font-size: 20px; font-weight: bold; padding: 10px;'
+    'color: #1565C0; font-size: 20px; font-weight: bold; padding: 10px;'
   );
   console.log(
-    '%cModern Healthcare · Kurnool · Andhra Pradesh',
-    'color: #a8a8b8; font-size: 12px; padding: 10px;'
+    '%cCorporate Healthcare · Kurnool · Andhra Pradesh',
+    'color: #455A64; font-size: 12px; padding: 10px;'
   );
   
   // ══ DETECT SLOW NETWORK ══
