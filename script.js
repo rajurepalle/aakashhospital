@@ -153,60 +153,43 @@
     revealObserver.observe(el);
   });
 
-  // ══ COUNTER ANIMATION ══
-  function animateCounter(el, target, duration = 1800) {
-    const isDecimal = target % 1 !== 0;
+  // ══ COUNTER ANIMATION (triggers on page load) ══
+  function animateCounter(el, target, duration = 1800, delay = 0) {
+    const isDecimal = el.dataset.decimal === '1' || target % 1 !== 0;
+    const suffix = el.dataset.suffix || '';
     const startTime = performance.now();
     
     function update(currentTime) {
       const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      
-      // Easing function (ease-out cubic)
+      if (elapsed < delay) { requestAnimationFrame(update); return; }
+      const adjusted = elapsed - delay;
+      const progress = Math.min(adjusted / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
       const current = target * eased;
       
       if (isDecimal) {
-        el.textContent = current.toFixed(1);
+        el.textContent = current.toFixed(1) + suffix;
       } else {
-        el.textContent = Math.floor(current).toLocaleString();
+        el.textContent = Math.floor(current).toLocaleString() + suffix;
       }
       
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      } else {
-        el.textContent = isDecimal 
-          ? target.toFixed(1) 
-          : target.toLocaleString();
-      }
+      if (progress < 1) requestAnimationFrame(update);
     }
-    
     requestAnimationFrame(update);
   }
   
-  const statObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseFloat(el.dataset.target);
-        
-        if (!isNaN(target)) {
-          // Faster animation on mobile
-          const duration = isMobile ? 1200 : 1800;
-          animateCounter(el, target, duration);
-        }
-        
-        statObserver.unobserve(el);
+  // Start counters after hero animation delay
+  function startHeroCounters() {
+    document.querySelectorAll('.hsb-num[data-target], .hs-num[data-target]').forEach((el, i) => {
+      const target = parseFloat(el.dataset.target);
+      if (!isNaN(target)) {
+        const duration = isMobile ? 1200 : 1800;
+        const delay = 600 + (i * 150); // stagger after hero animations
+        animateCounter(el, target, duration, delay);
       }
     });
-  }, {
-    threshold: 0.5
-  });
-  
-  // Observe both hero stats and any other stat numbers
-  document.querySelectorAll('.hs-num[data-target], .stat-num[data-target]').forEach(el => {
-    statObserver.observe(el);
-  });
+  }
+  startHeroCounters();
 
   // ══ SMOOTH SCROLL ══
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -233,6 +216,39 @@
       }
     });
   });
+
+  // ══ DEPT CARD → DOCTOR FILTER ══
+  document.querySelectorAll('.dept-card[data-dept-filter]').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => {
+      const filter = card.dataset.deptFilter;
+      // Activate the matching filter button
+      filterBtns.forEach(b => {
+        b.classList.toggle('active', b.dataset.filter === filter);
+      });
+      // Filter doctor cards
+      applyFilter(filter);
+      // Scroll to doctors section
+      const doctorsSection = document.getElementById('doctors');
+      if (doctorsSection) {
+        doctorsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  function applyFilter(filter) {
+    docCards.forEach(card => {
+      const categories = card.dataset.cat || '';
+      const shouldShow = filter === 'all' || categories.includes(filter);
+      if (shouldShow) {
+        card.classList.remove('hidden');
+        card.classList.remove('visible');
+        setTimeout(() => card.classList.add('visible'), 50);
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  }
 
   // ══ DOCTOR FILTER ══
   const filterBtns = document.querySelectorAll('.fb');
@@ -375,5 +391,94 @@
       });
     });
   }
+
+  // ══ DOCTOR PHOTO AUTO-LOAD ══
+  // Drop images into images/ folder with these exact names:
+  //   dr-srihari.jpg       dr-santosh.jpg       dr-haritha.jpg
+  //   dr-jaswanth.jpg      dr-ajay.jpg           dr-arshiya.jpg
+  //   dr-sreedhar.jpg      dr-surendra.jpg       dr-praveen.jpg
+  //   dr-siva.jpg          dr-naga.jpg           dr-madhavi.jpg
+  //   dr-vamsi.jpg         dr-raviteja.jpg       dr-muthyasree.jpg
+  //   dr-ravikumar.jpg     dr-roshan.jpg         dr-rambalaji.jpg
+  //   dr-kakshaiah.jpg     dr-srilatha.jpg       dr-george.jpg
+  //   dr-parvathi.jpg      dr-beesanna.jpg       dr-sushmitha.jpg
+  //   dr-sreeja.jpg        dr-eswar.jpg          dr-sravan.jpg
+  //   dr-madhavi-pt.jpg
+  //
+  // Website auto-shows photos when they exist. Missing = initials shown.
+
+  function initDoctorPhotos() {
+    document.querySelectorAll('.dc-photo, .poster-image img').forEach(img => {
+      // Remove any inline onerror to avoid conflicts
+      img.removeAttribute('onerror');
+
+      function check() {
+        const container = img.closest('.dc-avatar, .poster-image');
+        if (!container) return;
+        const fallback = container.querySelector('.dc-initials, .poster-placeholder');
+        if (img.naturalWidth > 0 && img.complete) {
+          img.style.display = '';
+          if (fallback) fallback.style.display = 'none';
+        } else {
+          img.style.display = 'none';
+          if (fallback) fallback.style.display = 'flex';
+        }
+      }
+
+      if (img.complete) {
+        check();
+      } else {
+        img.addEventListener('load', check);
+        img.addEventListener('error', check);
+      }
+    });
+  }
+
+  // Run on DOM ready and also after a short delay for slow loads
+  initDoctorPhotos();
+  setTimeout(initDoctorPhotos, 1500);
+
+  // ══ EMERGENCY BUTTON ══
+  window.handleEmergency = function() {
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) {
+      window.location.href = 'tel:08518222107';
+    } else {
+      document.getElementById('emergencyPopup').classList.add('active');
+    }
+  };
+  window.closeEmergency = function() {
+    document.getElementById('emergencyPopup').classList.remove('active');
+  };
+
+  // ══ SHOW MORE: FACILITIES ══
+  window.toggleFacilities = function() {
+    const grid = document.querySelector('.fac-grid');
+    const btn = document.querySelector('#facShowMore .show-more-btn');
+    if (!grid || !btn) return;
+    grid.classList.toggle('expanded');
+    btn.classList.toggle('expanded');
+    btn.querySelector('.sm-text').textContent = grid.classList.contains('expanded') ? 'Show Less' : 'Show All Facilities';
+  };
+
+  // ══ SHOW MORE: DEPARTMENTS ══
+  window.toggleDepts = function() {
+    const grid = document.querySelector('.dept-grid');
+    const btn = document.querySelector('#deptShowMore .show-more-btn');
+    if (!grid || !btn) return;
+    grid.classList.toggle('expanded');
+    btn.classList.toggle('expanded');
+    btn.querySelector('.sm-text').textContent = grid.classList.contains('expanded') ? 'Show Less' : 'Show All Specialities';
+  };
+
+  // ══ SHOW MORE: DOCTORS ══
+  window.toggleDoctors = function() {
+    const grid = document.getElementById('doctorsGrid');
+    const btn = document.getElementById('doctorsShowMoreBtn');
+    if (!grid || !btn) return;
+    grid.classList.toggle('expanded');
+    btn.classList.toggle('expanded');
+    btn.querySelector('.sm-text').textContent = grid.classList.contains('expanded') ? 'Show Less' : 'Show All Doctors';
+  };
 
 })();
